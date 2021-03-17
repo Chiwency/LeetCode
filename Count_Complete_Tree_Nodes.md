@@ -1,5 +1,5 @@
 ## [完全二叉树的节点个数](https://leetcode-cn.com/problems/count-complete-tree-nodes/)
-
+ 
 答案是用二分查找和位运算，通过把节点索引转化为二进制快速找到第`k`个节点，很巧妙
 
 我用的是深度优先遍历找到最后一个叶子节点，就能计算出总节点数
