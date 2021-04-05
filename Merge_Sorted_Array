@@ -1,0 +1,35 @@
+## [合并两个有序数组](https://leetcode-cn.com/problems/merge-sorted-array/)
+
+官方题解有空间复杂度O(1)的解法，抢快了，好好想想可以想到的，利用现有空间的套路在很多题中都看到了
+
+
+
+### 代码实现
+
+```go
+func merge(nums1 []int, m int, nums2 []int, n int) {
+	temp := make([]int, m)
+	copy(temp, nums1[:m])
+	p := 0
+	for i, j := 0, 0; i < m || j < n; p++ {
+		if i >= m {
+			nums1[p] = nums2[j]
+			j++
+			continue
+		} else if j >= n {
+			nums1[p] = temp[i]
+			i++
+			continue
+		}
+		if temp[i] <= nums2[j] {
+			nums1[p] = temp[i]
+			i++
+		} else {
+			nums1[p] = nums2[j]
+			j++
+		}
+	}
+	return
+}
+```
+
